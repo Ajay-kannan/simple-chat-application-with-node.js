@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatapp</title>
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    margin: 10px;
+}
+.chatbox{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: #667aff;
+
+    /* background-color: aquamarine; */
+}
+.type{
+    width: 60%;
+    height: 40px;
+    margin-left: 25px;
+}
+.send{
+    height: 40px;
+    width: 15%;
+}
+/* .container{
+    color: azure;
+    display: flex;
+    justify-content: space-between;
+} */
+/* .nav
+{
+    width: 100%;
+    height: 50px;
+    
+} */
+
+.header
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 15px;
+    justify-content: space-between;
+    background-color: #5cb85c;
+
+}
+
+.mess{
+    width: 100%;
+    height: 70px;
+    background-color: #15b2eb;
+    padding: 20px;
+    align-items: center;
+}
+
+.users{
+    background-color: #e6e9ff;
+	width: 100%;
+	overflow-y: scroll;
+    height:100%;
+}
+
+.chat-main {
+    
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+    grid-template-rows: 350px;}
+
+.message{
+    padding: 20px;
+    margin: 10px;
+    /* overflow-y: scroll; */
+}
+
+
+
+.footer{
+    text-align: center;
+}
+</style>
+<body>
+    <div class="container" >
+        <section class="header"><div class="nav">
+            chatapp
+        </div>
+        <a href="login.html" class="btn">Leave Room</a></section>
+        <div id="username" style="text-align: center;" ><%= user.username %></div>
+       <main class="chat-main"> <section><div class="users">
+        <input id="findvalue" type="text" placeholder="Enter the friend name" required/>
+        <button id="finduser" type="button" onclick="getfriend()"> connect </button>
+       <div class="statusfrd"></div>
+    </div></section>
+
+        <section>
+            
+            <div class="chatbox">
+                <div class="message"></div>
+            <!-- <div class="message">ajay</div> -->
+         </div> 
+        </section>
+    </main>
+    <div class="mess-box">
+      <div class="mess" >
+      <input id="valueName" class="type"placeholder="Enter message" autocomplete="off" type="text" required />
+       <button class="send" onclick="chatmess()">send </button> </div>
+    </div>
+        <section><div class="footer"> endbar</div></section>
+    </div>
+
+    <%= user %>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chatscript.js"></script>
+
+</html>
+
+
